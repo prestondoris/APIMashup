@@ -27,19 +27,32 @@ def findARestaurant(mealType,location):
         query=mealType,
         intent='browse',
         radius=16000,
-        limit=5
+        limit=1
     )
     resp = requests.get(url=url_FS, params=params)
     data = json.loads(resp.text)
+
+	#3. Grab the first restaurant
     name = data['response']['venues'][0]['name']
     print name
     address = data['response']['venues'][0]['location']['address']
     print address
+    venue_id = data['response']['venues'][0]['id']
+    print venue_id
 
-	#3. Grab the first restaurant
 	#4. Get a  300x300 picture of the restaurant using the venue_id (you can change this by altering the 300x300 value in the URL or replacing it with 'orginal' to get the original picture
+    url_photo = 'https://api.foursquare.com/v2/venues/%s/photos' % venue_id
+    photoParams = dict(
+        client_id=foursquare_client_id,
+        client_secret=foursquare_client_secret,
+        v='20170801'
+    )
+    photoResp = requests.get(url=url_photo, params=photoParams)
+    photoData = json.loads(photoResp.text)
+
 	#5. Grab the first image
 	#6. If no image is available, insert default a image url
+    genericImage = 'https://upload.wikimedia.org/wikipedia/commons/0/04/Aiga_restaurant_inv.svg'
 	#7. Return a dictionary containing the restaurant name, address, and image url
 
 if __name__ == '__main__':
