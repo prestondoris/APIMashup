@@ -38,30 +38,39 @@ def findARestaurant(mealType,location):
     address = data['response']['venues'][0]['location']['address']
     print address
     venue_id = data['response']['venues'][0]['id']
-    print venue_id
 
 	#4. Get a  300x300 picture of the restaurant using the venue_id (you can change this by altering the 300x300 value in the URL or replacing it with 'orginal' to get the original picture
+    #5. Grab the first image
+    #6. If no image is available, insert default a image url
     url_photo = 'https://api.foursquare.com/v2/venues/%s/photos' % venue_id
     photoParams = dict(
         client_id=foursquare_client_id,
         client_secret=foursquare_client_secret,
-        v='20170801'
+        v='20170801',
+        limit=1
     )
     photoResp = requests.get(url=url_photo, params=photoParams)
     photoData = json.loads(photoResp.text)
+    if 'prefix' in photoData:
+        photoLink = photoData['response']['photos']['items'][0]['prefix'] + '300x300' + photoData['response']['photos']['items'][0]['suffix']
+        print photoLink
+        print ''
+    else:
+        photoLink = 'https://upload.wikimedia.org/wikipedia/commons/0/04/Aiga_restaurant_inv.svg'
+        print photoLink
+        print ''
 
-	#5. Grab the first image
-	#6. If no image is available, insert default a image url
-    genericImage = 'https://upload.wikimedia.org/wikipedia/commons/0/04/Aiga_restaurant_inv.svg'
+
+
 	#7. Return a dictionary containing the restaurant name, address, and image url
 
 if __name__ == '__main__':
-	#findARestaurant("Pizza", "Tokyo, Japan")
-	#findARestaurant("Tacos", "Jakarta, Indonesia")
-	#findARestaurant("Tapas", "Maputo, Mozambique")
-	#findARestaurant("Falafel", "Cairo, Egypt")
-	#findARestaurant("Spaghetti", "New Delhi, India")
-	#findARestaurant("Cappuccino", "Geneva, Switzerland")
+	findARestaurant("Pizza", "Tokyo, Japan")
+	findARestaurant("Tacos", "Jakarta, Indonesia")
+	findARestaurant("Tapas", "Maputo, Mozambique")
+	findARestaurant("Falafel", "Cairo, Egypt")
+	findARestaurant("Spaghetti", "New Delhi, India")
+	findARestaurant("Cappuccino", "Geneva, Switzerland")
 	findARestaurant("Sushi", "Los Angeles, California")
-	#findARestaurant("Steak", "La Paz, Bolivia")
-	#findARestaurant("Gyros", "Sydney Australia")
+	findARestaurant("Steak", "La Paz, Bolivia")
+	findARestaurant("Gyros", "Sydney Australia")

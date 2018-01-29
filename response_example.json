@@ -68,3 +68,35 @@
         }
     ]
 }
+
+
+
+
+
+{
+    u'meta': {
+        u'code': 200,
+        u'requestId': u'5a6e8e5b4434b9602e96c873'
+    },
+    u'response': {
+        u'photos': {
+            u'count': 1,
+            u'items': [
+                {
+                    u'suffix': u'/KEi8pONMVi-80G-rxKTWvwSj_sXoVXkOh9nIyL2Xj3g.jpg',
+                    u'width': 720,
+                    u'checkin': {
+                        u'timeZoneOffset': -420,
+                        u'type': u'checkin',
+                        u'id': u'4fd81b10e4b0cd4d9e8a2b0c',
+                        u'createdAt': 1339562768
+                    },
+                    u'visibility': u'public',
+                    u'height': 540,
+                    u'source': {
+                        u'url': u'https://foursquare.com/download/#/iphone',
+                        u'name': u'Foursquare for iOS'
+                    },
+                    u'prefix': u'https://igx.4sqi.net/img/general/',
+                    u'user': {
+                        u'gender': u'female', u'id': u'3995859', u'firstName': u'GiB km', u'photo': {u'prefix': u'https://igx.4sqi.net/img/user/', u'suffix': u'/3995859_ui1wjMoG_I_1ldTvklLMIrmkIbpcEz7BI0HdLIXm494meuE2ZHWwVEKanW_jEI6mdjxrHiYMT.jpg'}}, u'id': u'4fd81b16e4b04c778249212a', u'createdAt': 1339562774}], u'dupesRemoved': 0}}}
