@@ -33,44 +33,48 @@ def findARestaurant(mealType,location):
     data = json.loads(resp.text)
 
 	#3. Grab the first restaurant
-    restaurant = data['response']['venues'][0]
-    venue_id = restaurant['id']
-    name = restaurant['name']
-    restaurant_address = restaurant['location']['formattedAddress']
-    address = ""
+    if data['response']['venues'][0]:
+        restaurant = data['response']['venues'][0]
+        venue_id = restaurant['id']
+        name = restaurant['name']
+        restaurant_address = restaurant['location']['formattedAddress']
+        address = ""
 
-    for i in restaurant_address:
-        address += i + " "
-        restaurant_address = address
+        for i in restaurant_address:
+            address += i + " "
+            restaurant_address = address
 
-	#4. Get a  300x300 picture of the restaurant using the venue_id (you can change this by altering the 300x300 value in the URL or replacing it with 'orginal' to get the original picture
-    #5. Grab the first image
-    #6. If no image is available, insert default a image url
-    url_photo = 'https://api.foursquare.com/v2/venues/%s/photos' % venue_id
-    photoParams = dict(
-        client_id=foursquare_client_id,
-        client_secret=foursquare_client_secret,
-        v='20170801',
-        limit=1
-    )
-    photoResp = requests.get(url=url_photo, params=photoParams)
-    photoData = json.loads(photoResp.text)
-    if photoData['response']['photos']['items']:
-        photoLink = photoData['response']['photos']['items'][0]['prefix'] + '300x300' + photoData['response']['photos']['items'][0]['suffix']
+    	#4. Get a  300x300 picture of the restaurant using the venue_id (you can change this by altering the 300x300 value in the URL or replacing it with 'orginal' to get the original picture
+        #5. Grab the first image
+        #6. If no image is available, insert default a image url
+        url_photo = 'https://api.foursquare.com/v2/venues/%s/photos' % venue_id
+        photoParams = dict(
+            client_id=foursquare_client_id,
+            client_secret=foursquare_client_secret,
+            v='20170801',
+            limit=1
+        )
+        photoResp = requests.get(url=url_photo, params=photoParams)
+        photoData = json.loads(photoResp.text)
+        if photoData['response']['photos']['items']:
+            photoLink = photoData['response']['photos']['items'][0]['prefix'] + '300x300' + photoData['response']['photos']['items'][0]['suffix']
+        else:
+            photoLink = "http://pixabay.com/get/8926af5eb597ca51ca4c/1433440765/cheeseburger-34314_1280.png?direct"
+
+    	#7. Return a dictionary containing the restaurant name, address, and image url
+        restaurantInfo = {
+            'name':name,
+            'address':restaurant_address,
+            'photo':photoLink
+        }
+        print restaurantInfo['name']
+        print restaurantInfo['address']
+        print restaurantInfo['photo']
+        print
+        return restaurantInfo
     else:
-        photoLink = "http://pixabay.com/get/8926af5eb597ca51ca4c/1433440765/cheeseburger-34314_1280.png?direct"
-
-	#7. Return a dictionary containing the restaurant name, address, and image url
-    restaurantInfo = {
-        'name':name,
-        'address':restaurant_address,
-        'photo':photoLink
-    }
-    print restaurantInfo['name']
-    print restaurantInfo['address']
-    print restaurantInfo['photo']
-    print
-    return restaurantInfo
+        print 'There were no restuarants at %s' % latLon
+        return 'No Restaurants Found'
 
 if __name__ == '__main__':
 	findARestaurant("Pizza", "Tokyo, Japan")
