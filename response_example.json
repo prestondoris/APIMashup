@@ -1,0 +1,70 @@
+{
+    u'hasMenu': True,
+    u'verified': False,
+    u'name': u'Sushi Gen',
+    u'referralId': u'v-1517193291',
+    u'venueChains': [],
+    u'url': u'http://www.sushigenla.com',
+    u'menu': {
+        u'url': u'https://foursquare.com/v/sushi-gen/4a087129f964a520c7731fe3/menu',
+        u'mobileUrl': u'https://foursquare.com/v/4a087129f964a520c7731fe3/device_menu',
+        u'type': u'Menu',
+        u'anchor': u'View Menu',
+        u'label': u'Menu'
+    },
+    u'specials': {
+        u'count': 0,
+        u'items': []
+    },
+    u'allowMenuUrlEdit': True,
+    u'contact': {
+        u'phone': u'2136170552',
+        u'formattedPhone': u'(213) 617-0552'
+    },
+    u'hasPerk': False,
+    u'location': {
+        u'distance': 765,
+        u'labeledLatLngs': [
+            {
+                u'lat': 34.046848613433966,
+                u'lng': -118.2385197680627,
+                u'label': u'display'
+            }
+        ],
+        u'neighborhood': u'Little Tokyo',
+        u'city': u'Los Angeles',
+        u'cc': u'US',
+        u'country': u'United States',
+        u'postalCode': u'90012',
+        u'state': u'CA',
+        u'formattedAddress': [
+            u'422 E 2nd St (btw Central & Alameda St.)',
+                u'Los Angeles, CA 90012', u'United States'
+            ],
+        u'crossStreet': u'btw Central & Alameda St.',
+        u'address': u'422 E 2nd St',
+        u'lat': 34.046848613433966,
+        u'lng': -118.2385197680627
+    },
+    u'beenHere': {
+        u'lastCheckinExpiredAt': 0
+    },
+    u'stats': {
+        u'tipCount': 96,
+        u'checkinsCount': 6808,
+        u'usersCount': 4117
+    },
+    u'id': u'4a087129f964a520c7731fe3',
+    u'categories': [
+        {
+            u'pluralName': u'Sushi Restaurants',
+            u'primary': True,
+            u'name': u'Sushi Restaurant',
+            u'shortName': u'Sushi',
+            u'id': u'4bf58dd8d48988d1d2941735',
+            u'icon': {
+                u'prefix': u'https://ss3.4sqi.net/img/categories_v2/food/sushi_', u'suffix': u'.png'
+            }
+        }
+    ]
+}
