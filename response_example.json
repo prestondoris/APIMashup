@@ -72,6 +72,73 @@
 
 
 
+{
+    u'meta': {
+        u'code': 200,
+        u'requestId': u'5a6ea84cdd579773b9133ab0'
+        },
+        u'response': {
+            u'venues': [
+                {
+                    u'verified': False,
+                    u'name': u'My Tapas @ Marisol Baia',
+                    u'referralId': u'v-1517201484',
+                    u'venueChains': [],
+                    u'specials': {
+                        u'count': 0,
+                        u'items': []
+                    },
+                    u'allowMenuUrlEdit': True,
+                    u'contact': {},
+                    u'hasPerk': False,
+                    u'location': {
+                        u'distance': 13668,
+                        u'labeledLatLngs': [
+                            {
+                                u'lat': -26.010125356910663,
+                                u'lng': 32.568004261814195,
+                                u'label': u'display'
+                            }
+                        ],
+                        u'cc': u'MZ',
+                        u'country': u'Mo\xe7ambique',
+                        u'formattedAddress': [
+                            u'Mo\xe7ambique'
+                        ],
+                        u'lat': -26.010125356910663,
+                        u'lng': 32.568004261814195
+                    }, u'beenHere': {
+                        u'lastCheckinExpiredAt': 0
+                    },
+                    u'stats': {
+                        u'tipCount': 0,
+                        u'checkinsCount': 12,
+                        u'usersCount': 9
+                    },
+                    u'id': u'52d27bd1498e23fb9913078d',
+                    u'categories': [
+                        {
+                            u'pluralName': u'Tapas Restaurants',
+                            u'primary': True,
+                            u'name': u'Tapas Restaurant',
+                            u'shortName': u'Tapas',
+                            u'id': u'4bf58dd8d48988d1db931735',
+                            u'icon': {
+                                u'prefix': u'https://ss3.4sqi.net/img/categories_v2/food/tapas_',
+                                u'suffix': u'.png'
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+}
+
+
+
+
+
+
 
 {
     u'meta': {
