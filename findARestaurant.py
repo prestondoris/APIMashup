@@ -16,7 +16,13 @@ def findARestaurant(mealType,location):
     japan = getGeocodeLocation('Tokyo, Japan')
     jakarta = getGeocodeLocation('Jakarta, Indonesia')
     maputo = getGeocodeLocation('Maputo, Mozambique')
-    cairo = 
+    cairo = getGeocodeLocation('Cairo, Egypt')
+    delhi = getGeocodeLocation('New Delhi, India')
+    geneva = getGeocodeLocation('Geneva, Switzerland')
+    la = getGeocodeLocation('Los Angeles, California')
+    paz = getGeocodeLocation('La Paz, Bolivia')
+    sydney = getGeocodeLocation('Sydney, Australia')
+    
 
 	#2.  Use foursquare API to find a nearby restaurant with the latitude, longitude, and mealType strings.
 	#HINT: format for url will be something like https://api.foursquare.com/v2/venues/search?client_id=CLIENT_ID&client_secret=CLIENT_SECRET&v=20130815&ll=40.7,-74&query=sushi
